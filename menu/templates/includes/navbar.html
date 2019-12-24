@@ -1,0 +1,19 @@
+{% load wagtailcore_tags %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+  <a class="navbar-brand text-white font-weight-bold" href="#">{{page.head|richtext}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto ">
+      {% for menu in menuitems %}
+        <li class="nav-item ">
+          <a class="nav-link text-white font-weight-bold" href="{{menu.url}}">{{menu.title}}</a> &nbsp; &nbsp;
+        </li>
+      {% endfor %}
+      
+    </ul>
+  </div>
+</nav>
